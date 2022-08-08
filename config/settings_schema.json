@@ -1,0 +1,129 @@
+[
+  {
+    "name": "theme_info",
+    "theme_name": "Retro-X",
+    "theme_author": "Efrain Lemus",
+    "theme_version": "1.0.0",
+    "theme_documentation_url": "https:\/\/help.shopify.com\/manual\/using-themes\/themes-by-shopify\/brooklyn",
+    "theme_support_url": "https:\/\/support.shopify.com\/"
+  },
+  {
+    "name": {
+      "da": "Farver",
+      "de": "Farben",
+      "en": "Colors",
+      "es": "Colores",
+      "fi": "Värit",
+      "fr": "Couleurs",
+      "hi": "रंग",
+      "it": "Colori",
+      "ja": "色",
+      "ko": "색상",
+      "nb": "Farger",
+      "nl": "Kleuren",
+      "pt-BR": "Cores",
+      "pt-PT": "Cores",
+      "sv": "Färger",
+      "th": "สี",
+      "zh-CN": "颜色",
+      "zh-TW": "色彩"
+    },
+    "settings": [
+      {
+        "type": "header",
+        "content": {
+          "da": "Generelt",
+          "de": "Allgemein",
+          "en": "General",
+          "es": "General",
+          "fi": "Yleistä",
+          "fr": "Menu général",
+          "hi": "सामान्य",
+          "it": "Generali",
+          "ja": "一般設定",
+          "ko": "일반",
+          "nb": "Generelt",
+          "nl": "Algemeen",
+          "pt-BR": "Geral",
+          "pt-PT": "Geral",
+          "sv": "Allmänt",
+          "th": "ทั่วไป",
+          "zh-CN": "通用",
+          "zh-TW": "一般"
+        }
+      }
+    ]
+  },
+  {
+    "name": "General",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Logo Options"
+      },
+      {
+        "type": "color",
+        "id": "bg_color",
+        "label": "Background (example)",
+        "default": "#ffffff"
+      },
+      {
+        "type": "color",
+        "id": "text_color",
+        "label": "Text color (example)",
+        "default": "#cccccc"
+      },
+      {
+        "type": "checkbox",
+        "id": "use_logo",
+        "label": "Use Custom Logo?"
+      },
+      {
+        "type": "image",
+        "id": "logo.png",
+        "label": "Custom Logo",
+        "max-width": 940,
+        "max-height": 300
+      },
+      {
+        "type": "paragraph",
+        "content": "Maximum logo dimensions are 940px wide by 300px high.Your uploaded file will be resized to fit within those constraints.Need a full-width banner? Upload an image with a width of 940px, and a height of 300px or less."
+      }
+    ]
+  },
+  {
+    "name": "About Page",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "about_img",
+        "label": "About Page Image"
+      }
+    ]
+  },
+  {
+    "name": "Contact Page",
+    "settings": [
+      {
+        "type": "text",
+        "id": "address",
+        "label": "Address"
+      },
+      {
+        "type": "text",
+        "id": "phone",
+        "label": "Phone Number"
+      },
+      {
+        "type": "text",
+        "id": "fax",
+        "label": "Fax Number"
+      },
+      {
+        "type": "text",
+        "id": "email",
+        "label": "Email"
+      }
+    ]
+  }
+]

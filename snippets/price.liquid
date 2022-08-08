@@ -1,0 +1,4 @@
+{% include 'sca_freegift_price' with product %}
+<div class="price text-uppercase">
+<span class="original">{{ sca_compare_at_price_min | money_without_trailing_zeros }}</span> <span class="sale text-white font-italic font-weight-bold">{{sca_price | money_without_trailing_zeros }}</span>
+</div>

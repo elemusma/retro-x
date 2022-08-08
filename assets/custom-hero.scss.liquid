@@ -1,0 +1,56 @@
+.top-fade {
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background:linear-gradient(180deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.6) 20%, rgba(0,0,0,0.5) 30%, rgba(0,0,0,0.25) 45%, rgba(0,0,0,0) 50%);
+}
+.hero-content {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    z-index: 1;
+}
+.background-divider {
+    height:2px;
+    background:#898989;
+    min-width:200px;
+    width:60%;
+    max-width:750px;
+    margin-left:auto;
+    margin-right:auto;
+}
+img.hero-img {
+    // min-height: 400px;
+    // max-height: 550px;
+    // object-fit: cover;
+    // transform: scale(1.2);
+/*     height:auto; */
+    transition: all 1s ease-in-out;
+}
+img.hero-img.normal {
+    transform:scale(1);
+}
+@media screen and (max-width:767px){
+    .top-fade {
+        background: rgba(0,0,0,.5);
+    }
+    // .hero-content {
+    //     top: 0%;
+    //     transform: translate(-50%, -40%);
+    // }
+    .hero-content h1 {
+        font-size: 2.15rem;
+    }
+}
+.hero-carousel.owl-carousel.owl-drag.owl-loaded.owl-theme.position-relative:after {
+    position: absolute;
+    content: "Taken at The Comfortable Home";
+    bottom: 25px;
+    left: 25px;
+    z-index: 1;
+    color: white;
+    font-family: 'aspiralight';
+    font-size: 11px;
+}

@@ -1,0 +1,80 @@
+<!-- start of bottom gallery -->
+<section class="bg-dark-grey pt-5 pb-5 bottom-gallery text-white">
+    <div class="container-fluid">
+        <div class="row pt-2">
+            <div class="col-md-12 text-center p-0 pb-2">
+                <div class="video-content position-relative">
+                <video width="100%" loop autoplay muted class="mobile-hidden">
+                <source src="{{ 'walkthrough-video.mp4' | asset_url }}">
+                </video>
+                <video width="100%" loop muted controls poster="{{ 'Photos-Retro-X-Video-Poster.png' | asset_url }}" class="desktop-hidden">
+                <source src="{{ 'walkthrough-video.mp4' | asset_url }}">
+                </video>
+                <h3 class="nova-bold title ls-0">built with Miyota technology</h3>
+            </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 text-center pt-3 pb-4">
+                <h3 class="title nova-thin">retro-x lifestyle</h3>
+			<div id="insta-feed"></div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- end of bottom gallery -->
+
+<section class="text-white text-center" style="padding:300px 0;background:url({{ 'Photos-Home-Mountain-Gems-Idaho-Springs.jpg' | asset_url }});background-size:cover;">
+<h2 class="m-auto" style="max-width:850px;">Check Out Our Retail Partner Idaho Springs Mountain Gems Today!</h2>
+  <div class="mt-4">
+    <a href="https://www.idahospringsmountaingems.com/" target="_blank" class="btn primary">Learn More</a>
+  </div>
+</section>
+
+<footer class="bg-dark-grey">
+<div style="background:url({{ 'image-nav-background.jpg' | asset_url }});">
+    <ul class="nav-titles pt-3 pb-3">
+        {% for link in linklists.footer.links %}
+          <li><a href= "{{ link.url }}" class="aspira-light">{{ link.title }}</a></li>
+        {% endfor %}
+    </ul>
+</div>
+    <div class="container pt-5 pb-5">
+        <div class="row align-items-center">
+            <div class="col-md-3 text-right">
+                <!-- <a href="https://insideoutfocus.com/" target="_blank">
+                <img src="{{ 'image-created-by-inside-out-creative.png' | asset_url }}" alt="" width="125px">
+            </a> -->
+            <a href="https://www.facebook.com/retroxco/" target="_blank">
+                <img src="{{ 'F-B.png' | asset_url }}" alt="" width="35px" />
+                </a>
+                <a href="http://instagram.com/retroxco/" target="_blank">
+                <img src="{{ 'IG.png' | asset_url }}" alt="" width="35px" />
+                </a>
+            </div>
+            <div class="col-md-6 text-center">
+                <a href="/">
+                <img src="{{ 'image-retrox-logo.png' | asset_url }}" alt="" width="255px">
+            </a>
+            <div class="text-white">
+            <small>have questions? email us at <a href="mailto:info@retroxco.com" target="_blank" class="text-white ls-0">info@retroxco.com</a></small>
+            <ul class="nav-titles pb-4 legal-pages">
+                {% for link in linklists.legal-pages.links %}
+                  <li><a href= "{{ link.url }}">{{ link.title }}</a></li>
+                {% endfor %}
+            </ul>
+        </div>
+            </div>
+            <div class="col-md-3">
+                <a href="https://pinterest.com/retroxco/" target="_blank">
+                    <img src="{{ 'P.png' | asset_url }}" alt="" width="35px" />
+                    </a>
+                    <a href="mailto:info@retroxco.com" target="_blank">
+                    <img src="{{ 'EI.png' | asset_url }}" alt="" width="35px" />
+                    </a>
+            </div>
+        </div>
+    </div>
+
+</footer>
+{% include 'popup' %}

@@ -1,0 +1,78 @@
+<section class="pt-5 pb-5">
+  <div class="container">
+<div id="output" class="row"></div>
+<script>
+  FB.api(
+'/17841436117810584/media',
+'GET',
+{"fields":"media_url,media_type,thumbnail_url"},
+function(response) {
+//   console.log('hello');
+}, { auth_type: 'reauthorize' });
+</script>
+<script>
+  fetch('https://graph.facebook.com/v9.0/17841436117810584/media?fields=media_type,media_url,thumbnail_url,permalink,like_count,comments_count&limit=9&access_token=EAAL7a2Yfv5oBADltsTx7sG0hzqdbGRoAAnsJVz9851ftBnYNtdcmskkfRZBOzJ97t5bZA10YieAagAfFwUSlwrOST7vsQF1PFGdEw1HGqEpUcSBHTkhwXckZCmrO59tpYyqskcQf5lLenoZA00Gi0gRRYonVzpZCpaRamijySXWp07qLx2nPV')
+    .then((res) => res.json())
+    .then((data) => {
+        let output = '';
+        data.data.forEach(function(media){
+          if( media.media_type === "CAROUSEL_ALBUM" || "IMAGE") {
+          output += `
+          <div class="col-md-4" style="margin:10px 0;">
+          <a href="${media.permalink}" target="_blank">
+          <img src="${media.media_url}" alt="" width="100%" height="300px" style="object-fit:cover;">
+          </a>
+          <span>${media.like_count}</span><br>
+          <span>${media.comments_count}</span>
+          </div>
+          `;
+      } else if (media.media_type === 'VIDEO') {
+          output +=`
+          <div class="col-md-4" style="margin:10px 0;">
+          <a href="${media.permalink}" target="_blank">
+          <img src="${media.thumbnail_url}" alt="" width="100%" height="300px" style="object-fit:cover;">
+          </a>
+          <span>${media.like_count}</span>
+          </div>
+          `;
+      }
+        });
+        document.querySelector('#output').innerHTML = output;
+    });
+</script>
+
+    <!-- </div> -->
+  </div>
+</section>
+
+
+<script>
+    window.fbAsyncInit = function() {
+      FB.init({
+        appId      : '839388646850458',
+        cookie     : true,
+        xfbml      : true,
+        version    : 'v9.0'
+      });
+        
+      FB.AppEvents.logPageView();   
+        
+    };
+  
+    (function(d, s, id){
+       var js, fjs = d.getElementsByTagName(s)[0];
+       if (d.getElementById(id)) {return;}
+       js = d.createElement(s); js.id = id;
+       js.src = "https://connect.facebook.net/en_US/sdk.js";
+       fjs.parentNode.insertBefore(js, fjs);
+     }(document, 'script', 'facebook-jssdk'));
+
+
+function checkLoginState() {
+  FB.getLoginStatus(function(response) {
+    statusChangeCallback(response);
+  });
+}
+  </script>
+
+  

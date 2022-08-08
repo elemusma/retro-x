@@ -1,0 +1,139 @@
+<!-- /pages/watches.liquid -->
+<section class="pt-5 pb-5 categories">
+<div class="container">
+<div class="row">
+<div class="col-md-12 text-center">
+<h1 class="text-uppercase">WATCHES</h1>
+</div>
+</div>
+<!-- start of section -->
+<div class="row pt-5">
+<div class="col-md-12 text-center">
+<h2 class="text-uppercase font-weight-light">Breckenridge Chrono</h2>
+</div>
+</div>
+<div class="row justify-content-center">
+{% for product in collections['timber-series'].products %}
+<div class="col-md-4 col-lg-3 col-6 mb-3 product--individual no-fade text-center">
+<a href="{{product.url}}">
+<div class="product--img position-relative">
+<div class="product-border"></div>
+<div class="product-bg"></div>
+<img src="{{product.featured_image.src | img_url: '1920x'}}" alt="" width="100%" class="mb-3">
+</div>
+<span class="shopify-product-reviews-badge" data-id="{{ product.id }}"></span>
+</a>
+<div class="product-content text-center">
+<h6 class=""><a href="{{product.url}}" class="mt-4 mb-4 nova-bold accent">{{product.title}}</a></h6>
+{% include 'price' %}
+<!-- <a href="{{product.url}}" class="btn primary mt-4">Shop Now</a> -->
+</div>
+</div>
+{% endfor %}
+
+</div>
+<!-- end of section -->
+<!-- start of section -->
+<div class="row pt-5 mt-5">
+<div class="col-md-12 text-center">
+<h2 class="text-uppercase font-weight-light">Aspen Chrono</h2>
+</div>
+</div>
+<div class="row justify-content-center">
+{% for product in collections['classic-series'].products %}
+<div class="col-md-4 col-lg-3 col-6 mb-3 product--individual no-fade text-center">
+<a href="{{product.url}}">
+<div class="product--img position-relative">
+<div class="product-border"></div>
+<div class="product-bg"></div>
+<img src="{{product.featured_image.src | img_url: '1920x'}}" alt="" width="100%" class="mb-3">
+</div>
+<span class="shopify-product-reviews-badge" data-id="{{ product.id }}"></span>
+</a>
+<div class="product-content text-center">
+<h6 class=""><a class="mt-4 mb-4 nova-bold accent" href="{{product.url}}">{{product.title}}</a></h6>
+{% include 'price' %}
+<!-- <a href="{{product.url}}" class="btn primary mt-4">Shop Now</a> -->
+</div>
+</div>
+{% endfor %}
+</div>
+<!-- end of section -->
+<!-- start of section -->
+<div class="row pt-5 mt-5">
+<div class="col-md-12 text-center">
+<h2 class="text-uppercase font-weight-light">Crested Butte Chrono</h2>
+</div>
+</div>
+<div class="row justify-content-center">
+{% for product in collections['crested-butte-chrono'].products %}
+<div class="col-md-4 col-lg-3 col-6 mb-3 product--individual no-fade text-center">
+<a href="{{product.url}}">
+<div class="product--img position-relative">
+<div class="product-border"></div>
+<div class="product-bg"></div>
+<img src="{{product.featured_image.src | img_url: '1920x'}}" alt="" width="100%" class="mb-3">
+</div>
+<span class="shopify-product-reviews-badge" data-id="{{ product.id }}"></span>
+</a>
+<div class="product-content text-center">
+<h6 class=""><a class="mt-4 mb-4 nova-bold accent" href="{{product.url}}">{{product.title}}</a></h6>
+{% include 'price' %}
+</div>
+</div>
+{% endfor %}
+</div>
+<!-- end of section -->
+<!-- start of section -->
+<div class="row pt-5 mt-5">
+<div class="col-md-12 text-center">
+<h2 class="text-uppercase font-weight-light">Steamboat Chrono</h2>
+</div>
+</div>
+<div class="row justify-content-center">
+{% for product in collections['steamboat-chrono'].products %}
+<div class="col-md-4 col-lg-3 col-6 mb-3 product--individual no-fade text-center">
+<a href="{{product.url}}">
+<div class="product--img position-relative">
+<div class="product-border"></div>
+<div class="product-bg"></div>
+<img src="{{product.featured_image.src | img_url: '1920x'}}" alt="" width="100%" class="mb-3">
+</div>
+<span class="shopify-product-reviews-badge" data-id="{{ product.id }}"></span>
+</a>
+<div class="product-content text-center">
+<h6 class=""><a class="mt-4 mb-4 nova-bold accent" href="{{product.url}}">{{product.title}}</a></h6>
+{% include 'price' %}
+</div>
+</div>
+{% endfor %}
+</div>
+<!-- end of section -->
+<!-- start of section -->
+<div class="row pt-5 mt-5">
+<div class="col-md-12 text-center">
+<h2 class="text-uppercase font-weight-light">Keystone Chrono</h2>
+</div>
+</div>
+<div class="row justify-content-center">
+{% for product in collections['keystone-chrono'].products %}
+<div class="col-md-4 col-lg-3 col-6 mb-3 product--individual no-fade text-center">
+<a href="{{product.url}}">
+<div class="product--img position-relative">
+<div class="product-border"></div>
+<div class="product-bg"></div>
+<img src="{{product.featured_image.src | img_url: '1920x'}}" alt="" width="100%" class="mb-3">
+</div>
+<span class="shopify-product-reviews-badge" data-id="{{ product.id }}"></span>
+</a>
+<div class="product-content text-center">
+<h6 class=""><a class="mt-4 mb-4 nova-bold accent" href="{{product.url}}">{{product.title}}</a></h6>
+{% include 'price' %}
+</div>
+</div>
+{% endfor %}
+</div>
+<!-- end of section -->
+
+</div>
+</section>

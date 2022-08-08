@@ -1,0 +1,151 @@
+<!-- start of hero -->
+<section class="position-relative" style="overflow:hidden;">
+<div class="hero-carousel owl-carousel owl-theme position-relative" style="background: url({{ 'image-nav-background.jpg' | asset_url }});">
+<img src="{{ 'Photos-Hero-Crested-Butte-Still-Life.jpg' | asset_url }}" alt="" class="hero-img blackwood w-100" height="725px" style="object-fit:cover;">
+  <img src="{{ 'Photos-Hero-Breckenridge-Blackwood.jpg' | asset_url }}" alt="" class="hero-img blackwood w-100" height="725px" style="object-fit:cover;">
+<img src="{{ 'Photos-Retro-X-Rugged-Man-Home-1.jpg' | asset_url }}" alt="" class="hero-img w-100" height="725px" style="object-fit:cover;">
+<img src="{{ 'Photos-Retro-X-Rugged-Man-Home.jpg' | asset_url }}" alt="" class="hero-img w-100" height="725px" style="object-fit:cover;">
+</div>
+<div class="top-fade position-absolute"></div>
+<div class="container">
+<div class="row">
+<div class="col-md-12 text-center text-white pt-5 mt-5 hero-content">
+<h1 class="nova-thin">handcrafted for the rugged man</h1>
+<div class="background-divider"></div>
+</div>
+</div>
+</div>
+</section>
+<!-- end of hero -->
+<!-- start of categories -->
+<section style="background:url({{ 'image-nav-background.jpg' | asset_url }});" class="categories pt-4 pb-4 text-white">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <ul class="nav-titles pb-4">
+                    {% for link in linklists.main-categories.links %}
+                      <li><a href= "{{ link.url }}">{{ link.title }}</a></li>
+                    {% endfor %}
+                </ul>
+                <a href="/pages/shop" class="btn primary">Shop Now</a>
+                <h6 class="text-uppercase m-0 mt-3 myriad ls-0">Free Shipping in the US</h6>
+            </div>
+        </div>
+    </div>
+</section>
+<div class="bg-dark bg-border"></div>
+<!-- end of categories -->
+<!-- start of bestsellers -->
+<section class="best-sellers pb-5" id="best-sellers">
+<div class="container">
+<div class="row justify-content-center">
+<div class="col-md-6 col-9 text-center best-sellers-heading pt-4 pb-4">
+<h2 class="nova-regular pr-5 pl-5">best sellers</h2>
+</div>
+</div>
+<div class="row pt-5">
+{% for product in collections['best-sellers'].products %}
+
+<div class="col-md-3 col-6 product--individual text-center">
+<a href="{{product.url}}">
+<div class="product--img position-relative">
+<div class="product-border"></div>
+<div class="product-bg"></div>
+<img src="{{product.featured_image.src | img_url: '1920x'}}" alt="" width="100%" class="mb-3">
+</div>
+<span class="shopify-product-reviews-badge" data-id="{{ product.id }}"></span>
+</a>
+<h6 class="mt-4 mb-4 nova-bold accent"><a href="{{product.url}}">{{ product.title }}</a></h6>
+</div>
+
+{% endfor %}
+</div>
+</div>
+</section>
+<!-- end of bestsellers -->
+<!-- start of content -->
+<section class="pt-5 content-area" style="background:url({{ 'image-nav-background.jpg' | asset_url }});">
+<div class="container-fluid">
+<div class="row">
+<div class="col-md-6 p-0">
+<img src="{{ 'Photos-Custom-Gift-Boxes.jpg' | asset_url }}" alt="" width="100%" height="100%" style="object-fit:cover;">
+</div>
+<div class="col-md-6 p-0 right">
+<div class="col-md-12 pt-5 pb-5">
+<div class="top">
+<div class="bg-top"></div>
+<div class="text">
+<div class="text-left">
+<h5 class="accent text-uppercase nova-bold">Step It Up a Notch</h5>
+</div>
+<div class="text-center">
+<h3 class="title nova-thin ls-0">rustic wood &amp; steel charm</h3>
+</div>
+<div class="text-right">
+<h5 class="accent text-uppercase ls-big nova-bold">With our high-quality materials</h5>
+</div>
+</div>
+</div>
+</div>
+<div class="pt-3 pb-5"></div>
+<div class="col-md-11 ml-auto mt-2 smaller-text">
+<div class="bg-top"></div>
+<div class="featured-text">
+<p class="m-0 nova-thin">Named for ski resorts in the Rocky Mountains, our men’s watches and bracelets feature the same rustic charm with rugged, yet elegant, style. Our sustainably sourced materials mean you can wear nature on your wrist while feeling good about being a steward of the environment.</p>
+</div>
+</div>
+<div class="col-md-12 text-center pt-4 pb-4">
+<a href="/pages/watches" class="btn primary mb-5">Shop Now</a>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-md-6 p-0 left">
+<div class="col-md-12 pt-5 pb-5">
+<div class="top">
+<div class="bg-top"></div>
+<div class="text">
+<div class="text-left">
+<h5 class="accent text-uppercase nova-bold">From Around the World</h5>
+</div>
+<div class="text-center">
+<h3 class="title nova-thin ls-0">exotic wood</h3>
+</div>
+<div class="text-right">
+<h5 class="accent text-uppercase ls-big nova-bold">durable and long lasting</h5>
+</div>
+</div>
+</div>
+</div>
+<div class="pt-3 pb-5"></div>
+<div class="col-md-11 mt-2 smaller-text text-right">
+<div class="bg-top"></div>
+<div class="featured-text">
+<p class="m-0 nova-thin">Premium exotic raw woods. From dark, luxury woods to pacific coast Redwoods to lighter zebrawoods, we offer an array of high-end, unique materials in all of our products.</p>
+</div>
+</div>
+<div class="col-md-12 text-center pt-4 pb-4">
+<a href="/pages/about" class="btn primary mb-5">Learn More</a>
+</div>
+
+</div>
+<div class="col-md-6 p-0">
+<img src="{{ 'Photos-Exotic-Woods.jpg' | asset_url }}" alt="" width="100%" height="100%" style="object-fit:cover;">
+</div>
+</div>
+</div>
+</section>
+<!-- end of content -->
+<!-- start of product categories -->
+<section class="product-categories pt-5 pb-5">
+    <div class="container">
+    <div class="row">
+    <div class="col-md-12 text-center">
+    <h3 class="title nova-thin">product categories</h3>
+    </div>
+    </div>
+{% include 'product-categories' %}
+    </div>
+    </section>
+<div class="bg-grey bg-border"></div>
+    <!-- end of product categories -->

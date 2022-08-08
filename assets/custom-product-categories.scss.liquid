@@ -1,0 +1,59 @@
+.product-border {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 85%;
+    height: 85%;
+    border:1px solid #737373;
+}
+.product-bg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    height: 80%;
+    background: rgba(191, 191, 191, .42);
+    mix-blend-mode: multiply;
+}
+.product--individual img {
+    height: 300px;
+    object-fit: contain;
+    // position: relative;
+}
+.product--individual .product--img:after {
+    background: rgba(0, 0, 0, .5);
+    position: absolute;
+    content: "SHOP NOW";
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    // transform: scale(1.1);
+    opacity:0;
+}
+.product--individual .product--img:after,.product-border,.product-bg{
+    transition:all 1s ease-in-out;
+}
+.product--individual:hover .product-border,.product--individual:hover .product-bg{
+    opacity:0;
+}
+.product--individual:hover .product--img:after {
+    opacity:1;
+}
+.product--individual.no-fade:hover .product-border,.product--individual.no-fade:hover .product-bg{
+    opacity:1;
+}
+.product--individual.no-fade:hover .product--img:after {
+    opacity:0;
+}
+// transparent background
+.product--individual .transparent-bg {
+    /* z-index: 0; */
+    position: relative;
+}

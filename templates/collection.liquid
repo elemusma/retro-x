@@ -1,0 +1,34 @@
+<!-- /templates/collection.liquid -->
+<section class="pt-5 pb-5 categories">
+<div class="container">
+<div class="row">
+<div class="col-md-12 text-center">
+<h1 class="text-uppercase">{{ collection.title }}</h1>
+{{ collection.content }}
+</div>
+</div>
+<div class="row justify-content-center">
+{% for product in collection.products %}
+<div class="col-md-4 col-lg-3 col-6 mb-3 product--individual no-fade text-center">
+<a href="{{product.url}}">
+<div class="product--img position-relative">
+<div class="product-border"></div>
+<div class="product-bg"></div>
+<img src="{{product.featured_image.src | img_url: '1920x'}}" alt="" width="100%" class="mb-3">
+</div>
+<span class="shopify-product-reviews-badge" data-id="{{ product.id }}"></span>
+</a>
+<div class="product-content text-center">
+<h6 class=""><a class="mt-4 mb-4 nova-bold accent" href="{{product.url}}">{{product.title}}</a></h6>
+<!-- <div class="price text-uppercase">
+<span class="original">{{ product.compare_at_price_min | money_without_trailing_zeros }}</span> <span class="sale text-white font-italic font-weight-bold">{{product.price | money_without_trailing_zeros }}</span>
+</div> -->
+{% include 'price' %}
+<!-- <a href="{{product.url}}" class="btn primary mt-4">Shop Now</a> -->
+</div>
+</div>
+{% endfor %}
+
+</div>
+</div>
+</section>

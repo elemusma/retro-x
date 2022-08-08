@@ -1,0 +1,86 @@
+<link rel="stylesheet" type="text/css" href="{{'fullpage.min.css' | asset_url }}" />
+<link rel="stylesheet" type="text/css" href="{{'examples.css' | asset_url }}" />
+<link rel="stylesheet" type="text/css" href="{{'custom.css' | asset_url }}" />
+<style>
+    .section{
+        background-size:cover!important;
+        background-position: center !important;
+    }
+    @media screen and (min-width:768px){
+    header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    width: 100%;
+}
+    }
+</style>
+
+<div id="fullpage">
+<div class="section" id="section0" style="background:url({{ 'About-Materials.jpg' | asset_url }});">
+<div class="content text-white">
+<div class="bar top"></div>
+<h2>Materials</h2>
+<p>
+All of our products are created from raw wood. Some products include elements of premium stainless steel and/or 100% genuine leather.
+</p>
+<div class="bar bottom"></div>
+</div>
+</div>
+<div class="section" id="section1" style="background:url({{ 'About-Design.jpg' | asset_url }});">
+<div class="content text-white">
+<div class="bar top"></div>
+<h2>Design</h2>
+<p>Intricate, detailed designs handcrafted to be one-of-a-kind.</p>
+<div class="bar bottom"></div>
+</div>
+</div>
+<div class="section" id="section3" style="background:url({{ 'About-Packaging-Retro-X.jpg' | asset_url }});">
+<div class="content text-white">
+<div class="bar top"></div>
+<h2>Packaging</h2>
+<p>Custom handcrafted wooden boxes included with all products for an all-inclusive gift experience.</p>
+<div class="bar bottom"></div>
+</div>
+</div>
+<div class="section" id="section4" style="background:url({{ 'About-Details.jpg' | asset_url }});">
+<div class="content text-white">
+<div class="bar top"></div>
+<h2>Details</h2>
+<p>High level of attention to detail on all aspects of our products.</p>
+<div class="bar bottom"></div>
+</div>
+</div>
+<div class="section" id="section5" style="background:url({{ 'About-Fast-Shipping.jpg' | asset_url }});">
+<div class="content text-white">
+<div class="bar top"></div>
+<h2>Fast Shipping</h2>
+<p>Free shipping within 1-3 business days via USPS from the Rocky Mountains of Colorado to you — 2-3 day estimated arrival time. (Shipping upgrades available at checkout).</p>
+<div class="bar bottom"></div>
+</div>
+</div>
+<div class="section" id="section6" style="background:url({{ 'About-Retro-X.jpg' | asset_url }});">
+<div class="content text-white">
+<div class="bar top"></div>
+<h2>Retro-X</h2>
+<p>Handcrafted with rustic charm for the modern rugged man.</p>
+<div class="bar bottom"></div>
+</div>
+</div>
+</div>
+
+<script type="text/javascript" src="{{'fullpage.min.js' | asset_url }}"></script>
+<script type="text/javascript" src="{{'examples.js' | asset_url }}"></script>
+<script type="text/javascript">
+var myFullpage = new fullpage('#fullpage', {
+// sectionsColor:['#1bbc9b', '#4BBFC3', '#7BAABE', 'whitesmoke', '#ccddff'],
+anchors: ['firstPage', 'secondPage', '3rdPage', 'Details', 'Fast-Shipping', 'Retro-X'],
+navigation:true,
+autoScrolling:false,
+fitToSection: false,
+navigationTooltips: ['Materials', 'Design', 'Packaging', 'Details', 'Fast Shipping', 'Retro-X'],
+showActiveTooltip: true,
+menu: '#menu'
+});
+</script>

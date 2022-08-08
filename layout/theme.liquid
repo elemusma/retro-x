@@ -1,0 +1,145 @@
+<!doctype html>
+<head>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  
+  {% if template == 'index' %}
+    <title>{{ shop.name }} | {{ page_title }}</title>
+  {% elsif template == '404' %}
+    <title>Page Not Found | {{ shop.name }}</title>
+  {% else %}
+    <title>{{ page_title }} | {{ shop.name }}</title>
+  {% endif %}
+
+  {% if page_description %}
+    <meta name="description" content="{{ page_description }}" />
+  {% endif %}
+
+  {{ content_for_header }}
+
+  <link rel="canonical" href="{{ canonical_url }}" />
+  <link rel="shortcut icon" href="{{ 'image-favicon.ico' | asset_url }}">
+  <meta name="viewport" content="width=device-width" />
+
+  {{ 'style.scss.css' | asset_url | stylesheet_tag }}
+  {{ 'bootstrap.min.css' | asset_url | stylesheet_tag }}
+  {{ 'custom-fonts.scss.css' | asset_url | stylesheet_tag }}
+  <!-- fonts -->
+  {{ 'proxima-nova.css' | asset_url | stylesheet_tag }}
+  {{ 'aspira.css' | asset_url | stylesheet_tag }}
+  {{ 'custom-nav.scss.css' | asset_url | stylesheet_tag }}
+  {{ 'custom-hero.scss.css' | asset_url | stylesheet_tag }}
+  {{ 'custom-cart.scss.css' | asset_url | stylesheet_tag }}
+  {{ 'custom-body.scss.css' | asset_url | stylesheet_tag }}
+  
+  {{ 'custom-products.scss.css' | asset_url | stylesheet_tag }}
+  {{ 'custom-btn.scss.css' | asset_url | stylesheet_tag }}
+  {{ 'custom-products-reviews.scss.css' | asset_url | stylesheet_tag }}
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
+
+   <meta name="p:domain_verify" content="1ff67ba4c18d70ec97f10d33672247d3"/>
+    
+{% include 'sca.freegifts' %}
+</head>
+<body>
+  <script async type="text/javascript" src="https://static.klaviyo.com/onsite/js/klaviyo.js?company_id=YsiUUG"></script>
+  <!-- Load Facebook SDK for JavaScript -->
+  <div id="fb-root"></div>
+  <script>
+    window.fbAsyncInit = function() {
+      FB.init({
+        xfbml            : true,
+        version          : 'v7.0'
+      });
+    };
+
+    (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js';
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));</script>
+
+  <!-- Your Chat Plugin code -->
+  <div class="fb-customerchat"
+    attribution=setup_tool
+    page_id="110889197298960"
+theme_color="#9E847A"
+greeting_dialog_display=hide
+logged_in_greeting="Hi! How can we help you?"
+logged_out_greeting="Hi! How can we help you?">
+  </div>
+  {% section 'header' %}
+
+  {% if template contains 'wholesale' %}
+  {% if customer %}
+  {% if customer.tags contains 'wholesale' %}
+  {{ content_for_layout }}
+  {% else %}
+  {% include 'wholesale-note' %}
+  {% endif %}
+  {% else %}
+  {% include 'wholesale-note' %}
+  {% endif %}
+  {% else%}
+  {{ content_for_layout }}
+  {% endif %}
+
+
+  {% section 'footer' %}
+  <link rel="stylesheet" href="https://use.typekit.net/dae3gho.css">
+  
+  <!-- {{ 'slick.min.css' | asset_url | stylesheet_tag }}
+  {{ 'slick-theme.css' | asset_url | stylesheet_tag }} -->
+  
+
+  <!-- {{ 'jquery-3.5.1.min.js' | asset_url | script_tag }}
+  {{ 'jquery-migrate-1.4.1.min.js' | asset_url | script_tag }} -->
+  {{ 'slick.min.js' | asset_url | script_tag }}
+  {{ 'slick.js' | asset_url | script_tag }}
+    
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
+
+  {{ 'owl.carousel.min.js' | asset_url | script_tag }}
+  {{ 'owl.carousel2.thumbs.min.js' | asset_url | script_tag }}
+  {{ 'owl-carousels.js' | asset_url | script_tag }}
+
+  {{ 'lightbox.js' | asset_url | script_tag }}
+  {{ 'lightbox.min.js' | asset_url | script_tag }}
+  {{ 'lightbox.min.css' | asset_url | stylesheet_tag }}
+
+  
+
+  {{ 'owl.carousel.min.css' | asset_url | stylesheet_tag }}
+  {{ 'owl.theme.default.min.css' | asset_url | stylesheet_tag }}
+  {{ 'owl-carousels-custom.css' | asset_url | stylesheet_tag }}
+  {{ 'popup.js' | asset_url | script_tag }}
+  {{ 'theme.js' | asset_url | script_tag }}
+  {{ 'custom-categories.scss.css' | asset_url | stylesheet_tag }}
+  {{ 'custom-best-sellers.scss.css' | asset_url | stylesheet_tag }}
+  {{ 'custom-content.scss.css' | asset_url | stylesheet_tag }}
+  {{ 'custom-product-categories.scss.css' | asset_url | stylesheet_tag }}
+  {{ 'custom-footer.scss.css' | asset_url | stylesheet_tag }}
+  {{ 'custom-form.scss.css' | asset_url | stylesheet_tag }}
+  {{ 'custom-contact.scss.css' | asset_url | stylesheet_tag }}
+  {{ 'custom-popup.scss.css' | asset_url | stylesheet_tag }}
+  
+  <!-- fontawesome -->
+  <script src="https://use.fontawesome.com/d91caa9534.js"></script>
+
+  <script>
+    $(document).ready(function(){
+      $('.image-zoom')
+        .wrap('<span style="display:inline-block"></span>')
+        .css('display', 'block')
+        .parent()
+        .zoom({
+          url: $(this).find('img').attr('data-zoom')
+        });
+      });
+  </script>
+</body>
+</html>

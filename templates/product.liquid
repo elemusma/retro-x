@@ -1,0 +1,112 @@
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script> -->
+<script src="https://rawgit.com/kenwheeler/slick/master/slick/slick.min.js"></script>
+<link type="text/css" rel="stylesheet" href="https://rawgit.com/kenwheeler/slick/master/slick/slick.css">
+<link type="text/css" rel="stylesheet" href="https://cdn.jsdelivr.net/evil-icons/1.9.0/evil-icons.min.css">
+<script src="https://cdn.jsdelivr.net/evil-icons/1.9.0/evil-icons.min.js"></script>
+{{ 'slick-custom.css' | asset_url | stylesheet_tag }}
+{% assign my_description = product.description | split: 'Split' %}
+{% include 'sca_freegift_price' with product %}
+<section class="pt-5 pb-5 products-individual">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+              <div class="desktop-hidden" style="position:relative;"><h1>{{ product.title }}</h1>
+                <span class="shopify-product-reviews-badge" data-id="{{ product.id }}"></span>
+                <div id="secomapp-fg-image-{{ product.id }}" style="display: none;"> {{ "icon-freegift.png" | asset_url | img_tag: "", "sca-fg-img-collect" }} </div>
+                <h5>{{ my_description[7] }}</h5>
+               </div>
+              <div class="layout">
+                <ul class="slider">
+                {% for image in product.images %}
+                <li>
+                  <img class="" src="{{ image.src | img_url: '450x' }}">
+                </li>
+                {% endfor %}
+            </ul>
+          </div>
+            </div>
+            <div class="col-md-6">
+                <div class="mobile-hidden" style="position:relative;"><h1>{{ product.title }}</h1>
+                  <span class="shopify-product-reviews-badge" data-id="{{ product.id }}"></span>
+                  <div id="secomapp-fg-image-{{ product.id }}" style="display: none;"> {{ "icon-freegift.png" | asset_url | img_tag: "", "sca-fg-img-collect" }} </div> 
+                  <h5>{{ my_description[7] }}</h5>
+                </div>
+                
+                <div class="related-products d-flex flex-wrap">
+                  <div class="text-center ml-3 mr-3">
+                  {{ my_description[4] }}
+                </div>
+                <div class="text-center ml-3 mr-3">
+                {{ my_description[5] }}
+              </div>
+              <div class="text-center ml-3 mr-3">
+              {{ my_description[6] }}
+            </div>
+                </div>
+                <p>{{ my_description[0] }}</p>
+                <div class="product-price text-uppercase">
+                    <span class="sale product font-weight-bold">{{sca_price | money_without_trailing_zeros}}</span>
+                    <span class="original product">Was {{ sca_compare_at_price_min | money_without_trailing_zeros }}</span> 
+                    <!-- <span>&#62; &#62;</span> -->
+                    <!-- <span class="discount-percentage">{{ my_description[1] }}</span> -->
+                </div>
+
+                <div class="add-to-cart">
+                  <form method="post" action="/cart/add" class="product-form">
+                      <input type="hidden" name="id" value="{{ product.variants.first.id }}" />
+                      <input min="1" type="number" id="quantity" name="quantity" value="1"/>
+                      <input type="submit" value="Add to cart" class="btn" />
+                    </form>
+                  <div class="sca-fg-cat-list" style="display:none;" name="secomapp-fg-data-{{ product.id }}"> </div>
+              </div>
+                    <p>{{ my_description[2] }}</p>
+                <!-- {{ product.content }} -->
+                  </div>
+            </div>
+            <div class="row pt-4">
+                <div class="col-md-12 d-flex flex-wrap justify-content-center product-gallery">
+                    <p>{{ my_description[3] }}</p>
+                </div>
+            </div>
+<!--             <div class="row product-reviews">
+<div class="col-md-12">
+<div id="shopify-product-reviews" data-id="{{product.id}}">{{ product.metafields.spr.reviews }}</div>
+</div>
+            </div> -->
+        </div>
+    </div>
+</section>
+<script type="text/javascript">
+  var _learnq = _learnq || [];
+
+  var item = {
+    Name: {{ product.title|json }},
+    ProductID: {{ product.id|json }},
+    Categories: {{ product.collections|map:'title'|json }},
+    ImageURL: "https:{{ product.featured_image.src|img_url:'grande' }}",
+    URL: "{{ shop.secure_url }}{{ product.url }}",
+    Brand: {{ product.vendor|json }},
+    Price: {{ product.price|money|json }},
+    CompareAtPrice: {{ product.compare_at_price_max|money|json }}
+  };
+
+  _learnq.push(['track', 'Viewed Product', item]);
+  _learnq.push(['trackViewedItem', {
+    Title: item.Name,
+    ItemId: item.ProductID,
+    Categories: item.Categories,
+    ImageUrl: item.ImageURL,
+    Url: item.URL,
+    Metadata: {
+      Brand: item.Brand,
+      Price: item.Price,
+      CompareAtPrice: item.CompareAtPrice
+    }
+  }]);
+</script>
+<script type="text/javascript">
+  var _learnq = _learnq || [];
+  document.querySelector('.btn').addEventListener('click',function (){
+    _learnq.push(['track', 'Added to Cart', item]);
+  });
+</script>
